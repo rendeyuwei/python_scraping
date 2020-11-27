@@ -1,0 +1,1923 @@
+
+第 1 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 2 页评论:
+2020.11.10 测试一下是否有用~~~
+网页结构都变了，这上面第四章代码不太管用了，感觉这个写的还蛮不错的，也是依据这本书的案例写的，实测可以运行，大家有兴趣可以看看。https://blog.csdn.net/weixin_43616817/article/details/109022479
+前来测试
+111
+livere已经改了，后来的小白同学可以在检查页面看一下
+from selenium import webdriver
+import time
+
+#获取webdriver对象，使用火狐浏览器
+firefox = webdriver.Firefox()
+firefox.implicitly_wait(30)
+firefox.get("http://www.santostang.com/2018/07/04/hello-world/")
+print('连接成功')
+
+#封装程序
+def get_comments(n,m):
+
+if n
+
+11
+offset现在找不到了，请问老师当这种下一页找不到规律的时候该怎么继续？
+@albanwang 只有第一页的offset看不到，其它页的都有的，也就是规律没变。
+测试中,关键点:
+comment_list=json_data['results']['parents']
+原来要梯子才能加载出评论zz
+
+第 3 页评论:
+测试路过
+有没有大佬看下，用书上P58-59代码怎么只爬取了第六页的评论
+
+爬虫...爬...
+hyui
+測試,路過
+dsfgvv44
+wwrerrrwr
+测试
+测试bug
+测试
+
+第 4 页评论:
+测试路过
+有没有大佬看下，用书上P58-59代码怎么只爬取了第六页的评论
+
+爬虫...爬...
+hyui
+測試,路過
+dsfgvv44
+wwrerrrwr
+测试
+测试bug
+测试
+
+第 5 页评论:
+caps["marionette"] = False， 这个导致selenium无法运行
+为啥我这边显示的是韩文？？？？？？？？？？？？？？？
+@Walker. 有解决方法了，黏贴评论的地址时最后的"code&="要删掉，也就是要跟书上的格式一模一样才行
+@Walker. 我也是
+到此一游
+麻烦老师给看一下是怎么回事？
+@阿宝 是All吧
+这代码到底哪错了，只能爬出一页的内容
+
+
+我发现一个和有意思的事，各位大佬发在评论里的代码是没有缩进的，不过爬取到的评论内容格式正确！！！
+爬虫原来还有这种妙用！太棒了哈哈哈哈哈
+动态抓取来的(　o=^ェ)o　┏━┓
+@穿山甲 朋友，成功了吗
+@REVIN 成功了！哈哈哈
+122
+你好帅哥
+555
+
+第 6 页评论:
+caps["marionette"] = False， 这个导致selenium无法运行
+为啥我这边显示的是韩文？？？？？？？？？？？？？？？
+@Walker. 有解决方法了，黏贴评论的地址时最后的"code&="要删掉，也就是要跟书上的格式一模一样才行
+@Walker. 我也是
+到此一游
+麻烦老师给看一下是怎么回事？
+@阿宝 是All吧
+这代码到底哪错了，只能爬出一页的内容
+
+
+我发现一个和有意思的事，各位大佬发在评论里的代码是没有缩进的，不过爬取到的评论内容格式正确！！！
+爬虫原来还有这种妙用！太棒了哈哈哈哈哈
+动态抓取来的(　o=^ェ)o　┏━┓
+@穿山甲 朋友，成功了吗
+@REVIN 成功了！哈哈哈
+122
+你好帅哥
+555
+
+第 7 页评论:
+第二条测试评论
+第一条测试评论
+测试
+测试
+#获取全部评论的代码
+from selenium import webdriver
+import time
+driver = webdriver.Firefox(executable_path = r'C:\Users\86186\PycharmProjects\geckodriver.exe')
+#把上述地址改成你电脑中geckodriver.exe程序的地址
+driver.implicitly_wait(10) # 隐性等待，最长等20秒
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+for page in range(1,22):
+print("第"+str(page)+"页")
+
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight-900);")
+# 转换iframe，再找到查看更多，点击
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+comments = driver.find_elements_by_css_selector('div.reply-content')
+for eachcomment in comments:
+content = eachcomment.find_element_by_tag_name('p')
+print(content.text)
+#判断是否是整十的页数
+if page%10 == 0:
+button = driver.find_element_by_css_selector('button.page-last-btn')
+button.click()
+else :
+load_more = driver.find_element_by_xpath("//button[@data-page='" + str(page+1) + "']" )
+load_more.click()
+
+# 把iframe又转回去
+driver.switch_to.default_content()
+time.sleep(2)
++1
+书中的应该是 iframe 而不是 ifram e
+一脸懵逼的看着大佬装逼
+第五条评论
+第四条评论
+
+第 8 页评论:
+第三条评论
+第二条评论
+第一条评论
+新鲜出炉的代码，亲测可用！因为评论的排版问题，同时附上截图供大家参考。
+
+
+from selenium import webdriver
+import time
+
+browser=webdriver.Chrome()
+
+print("wait for link...")
+browser.get("http://www.santostang.com/2018/07/04/hello-world/")
+print("link ok!")
+print("\nwait 5s...")
+time.sleep(5)
+browser.maximize_window() #最大化窗口
+print("wait over")
+
+
+for page in range(9,14):
+print("\n页数：",end="")
+print(page)
+print("wait 30s...")
+time.sleep(30)
+print("wait over")
+
+print("\n下滑到页面底部")
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight);") # 下滑到页面底部 需要-700
+print("下滑成功")
+print("\n转换iframe")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']")) # 转换iframe
+print("转换成功")
+print("\n定位翻页按钮")
+local = 'button[data-page="' + str(page) + '"]'
+if page == 11:
+local = 'button[data-page="next"]'
+print(local)
+load_more = browser.find_element_by_css_selector(local) # 定位翻页按钮
+print("定位成功")
+print("\n点击")
+load_more.click() # 点击
+print("点击成功")
+print("wait 10s...")
+time.sleep(10) # 等待1s加载
+print("wait over")
+
+print("\n寻找评论内容")
+comments = browser.find_elements_by_css_selector('div.reply-content')
+print("寻找成功")
+print("\n输出信息")
+for each_comment in comments:
+content = each_comment.find_element_by_tag_name('p')
+print(content.text)
+print("切换到新页面")
+browser.switch_to.default_content()
+print("切换成功")
+编写了一个自动爬取十页的程序，希望各位有所指教
+import time
+from selenium import webdriver
+driver=webdriver.Chrome()
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+for page in range(0,10):
+# 下滑到页面底部
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+driver.switch_to_frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+for comment in driver.find_elements_by_css_selector("div.reply-content"):
+content=comment.find_element_by_tag_name('p')
+print(content.text)
+if(page div.more-wrapper > ("
+str2=str(page+2)
+str3=")"
+sfsfd=str1+str2+str3
+driver.find_element_by_css_selector(sfsfd).click()
+time.sleep(5)
+driver.switch_to_default_content()
+测试
+捣鼓了一整天才勉强爬取到20页评论内容，但有时候代码执行成功，有时候有执行失败。大神有空帮忙看下如何优化，感谢~
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5) # 等待加载页面
+# 进入嵌套页面，通过xpath定位到frame
+my_frame = driver.switch_to.frame(driver.find_element_by_xpath('//iframe[contains(@id,"lv-comment")]'))
+# 通过xpath定位到具体的第一条评论
+i = 1 # 定义评论初始页码
+# 循环评论页面（这里设置最多加载20页），点击页数进入下一页
+for i in range(1, 21):
+# 定位评论的具体页，//button[@data-page="2"]
+page_xpath = "//button[@data-page=" + str(i) + "]"
+if i
+
+各位帅哥，美女们，可不可以-保持一个队形啊？谢谢咯
+这是新的第一条测试
+@Posierd 好的雄蝶
+@Posierd hhh
+下面的评论真的乱，找不到啊
+北京隔离十四天之第一天
+
+第 9 页评论:
+第217条评论
+弄了一个，但代码不够简洁，有劳各位帮忙修改
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(20)
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+
+for i in range(1,20):
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+if i%10 == 0:
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+key="button[data-page="+"'"+"next"+"'"+"]"
+load_more = driver.find_element_by_css_selector(key)
+load_more.click()
+driver.switch_to.default_content()
+else:
+driver.switch_to.default_content()
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+key="button[data-page="+"'"+str(i)+"'"+"]"
+load_more = driver.find_element_by_css_selector(key)
+load_more.click()
+driver.switch_to.default_content()
+time.sleep(2)
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+comments = driver.find_elements_by_css_selector('div.reply-content')
+
+
+print("第" + str(i) + "页:")
+
+for eachcomment in comments:
+content = eachcomment.find_element_by_tag_name('p')
+print(content.text)
+driver.switch_to.default_content()
+
+
+time.sleep(5)
+driver.quit()
+以下是SQL学习时候发现文章的代码错误。
+cursor.execute('''INSERT INTO urls (url,content) VALUES('%s','%s')'''%(link,boke_title))
+1.%s旁边文本的''不能少，否则出现报错you have an error in your SQL syntax; check the manual that corresponds to your
+2.%（link,boke_title),这条语句少些了%百分号。
+from selenium import webdriver
+import time
+
+driver = webdriver.Firefox(executable_path = r'F:\geckodriver.exe')
+driver.implicitly_wait(20) # 隐性等待，最长等20秒
+#把上述地址改成你电脑中geckodriver.exe程序的地址
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+
+for i in range(1,10):
+# 下滑到页面底部
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+# 转换iframe，再找到查看更多，点击
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+load_more = driver.find_element_by_css_selector('[data-page=\'%d\']'%(i,))#标签内属性用【】包括，正则表达式赋值，变为唯一属性。
+load_more.click()
+time.sleep(2)
+comments = driver.find_elements_by_css_selector('div.reply-content')
+for eachcomment in comments:#一个页面的评论为一个list
+content = eachcomment.find_element_by_tag_name('p')
+print (content.text)
+driver.switch_to.default_content()#变回原格式，方才能页面下滑
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+终于搞了出来，/(ㄒoㄒ)/~~
+from selenium import webdriver
+import time
+
+driver = webdriver.Firefox(executable_path =r'F:\Application\geckodriver.exe')#webdriver
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")#get_url
+driver.execute_script('window.scrollTo(0,document.body.scrollHeight);')#执行该语句让浏览器加载出button的html
+print('wait for 3 seconds')
+time.sleep(3) #加载等待
+for i in range(1,11):
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title = 'livere']"))
+button = driver.find_element_by_css_selector('button[data-page=\'%d\']'%(i,))
+button.click()
+print('Click and waiting loading --- please waiting for 8 s')
+time.sleep(8) #点击后需要等待，否则评论还没加载出来，数据抓取的代码已经跑完了，结果就是没抓到数据，而代码会正常的在运行
+comment = driver.find_elements_by_css_selector('div.reply-content')
+for eachcomment in comment:
+content = eachcomment.find_element_by_tag_name('p')
+print (content.text)
+driver.switch_to.default_content() #执行页面滑动的脚本需要将driver转换到正常的模式
+driver.execute_script('window.scrollTo(0,document.body.scrollHeight);')
+
+终于成功爬取了十页的评论，真心遇到了不少的问题，靠自己摸索前进真的很慢呀
+si
+test
++1
+试下
+谢谢作者如此负责任
+
+第 10 页评论:
+学习动态抓取
+234
+123
+测试评论 啦啦啦
+小白请教一下各位大佬，比如说我现在有一批CSV文件（1000组），全部是出发地和目的地，如果我想实现用百度地图自动搜索所有的出发地和目的地并抓取所需时间的话，
+
+关于如何批量把csv导入百度地图这个步骤，应该往哪个方向自学呢？提前感谢各位大大O.O
+selenium获取文章的所有评论这段代码运行错误：
+load_more = driver.find_element_by_css_selector('button.more-btn')
+提示：NoSuchElementException: Message: Unable to locate element: button.more-btn
+这该如何解决
+@林昕杰 改成：
+load_more = driver.find_element_by_css_selector('button.page-btn ')
+他的按钮标签名换掉了
+just for test
+# 20191203可以运行
+from selenium import webdriver
+import time #为了使用延时函数
+
+url = "http://www.santostang.com/2018/07/04/hello-world/"
+driver = webdriver.Firefox(executable_path = r'J:\Python编程\软件\geckodriver.exe') #根据自己电脑软件路径定义修改
+
+print("wait for link...")
+driver.get(url)
+print("link ok!")
+print("wait 5s...")
+time.sleep(5)
+driver.maximize_window() #最大化窗口
+print("wait over")
+
+for page in range(1, 19):
+print("页数：")
+print (page)
+time.sleep(1)
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight - 700);") # 下滑到页面底部 需要-700
+
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']")) # 转换iframe
+comments = driver.find_elements_by_css_selector('div.reply-content') # 找到评论内容
+for eachcomment in comments:
+content = eachcomment.find_element_by_tag_name('p')
+print(content.text)
+
+
+
+xpath = "//button[@data-page='" + str(page+1) + "']" # 定位翻页按钮
+
+if page == 10: #第10页按钮变化
+xpath = "//button[@data-page='"+ "next"+ "']" # 定位翻页按钮
+load_more = driver.find_element_by_xpath(xpath)
+load_more.click() # 点击
+time.sleep(1) # 等待1s加载
+
+driver.switch_to.default_content()
+time.sleep(1) # 等待1s加载
+from selenium import webdriver
+import time
+diver=webdriver.Firefox()
+diver.implicitly_wait(20)
+diver.get("http://www.santostang.com/2018/07/04/hello-world")
+time.sleep(5)
+for i in range(1,10):
+diver.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+diver.switch_to.frame(diver.find_element_by_css_selector("iframe[title='livere']"))
+key="button[data-page="+"'"+str(i)+"'"+"]"
+load_more=diver.find_element_by_css_selector(key)
+load_more.click()
+diver.switch_to.default_content()
+time.sleep(2)
+diver.switch_to.frame(diver.find_element_by_css_selector("iframe[title='livere']"))
+comments=diver.find_elements_by_css_selector('div.reply-content')
+for value in comments:
+content=value.find_element_by_tag_name("p")
+print(content.text)
+diver.switch_to.default_content()
+
+凑个热闹
+
+第 11 页评论:
+194号男嘉宾
+性感黄静澈，在线撩你 +Q81207848
+我是三号男嘉宾付国峰
+fpx牛逼
+谁能打出饕餮.我就认做他爸爸
+我是38号男嘉宾
+嘦勥昆夯茓巭昇
+大家好，我是社区管理员，请大家文明发帖，恶意灌水者，将会永久封禁您的账号，请大家维护社区环境，共建互联网美好明天！
+@叶惠美 no zuo no die why you try
+no try no high give me five
+有没有小哥哥呢！！！！！！
+@安之若素 没有呢
++vx看潘虎洗澡/
+@NO NICKNAME 哇，真的吗
+@安之若素 真的，还带音频
+
+第 12 页评论:
+巭孬嫑夯昆勥茓
+三元一部，十元三部，要的私我
+大家好，我也是23号涛涛，加Q有福利
+借你女儿还你孙子-23号
+大家好我是3号邹丽
+大家好，我是23号禹涛
+@Immature645 谈恋爱吗，我萝莉音哟
+@水满则溢 What are you NM talking about?
+浪浪
+涂涂
+大家好，我是禹小涛
+comment
+
+第 13 页评论:
+测试
+给爷爪巴 测试
+有人能告诉我“查看更多”在哪吗？
+qqq
+学习这本书不能死学，要会活用，网站上的内容在变化，url的参数有的无所谓，尤其是最后一个"_=" 多少都无所谓的，好像是跟点击次数有关。“callback=jQuery”后面这个有多个值，哪个都可以用的。总之，一定要多试几次才行，一晚上的功夫，带ajax的评论页我是没问题了，4.2节我已经学会，进我小店买东西，什么问题我都告诉你。 https://mobile.yangkeduo.com/mall_page.html?mall_id=799065059&ts=1572354791069&refer_share_id=8b9da4a9433b4353865ef8ab6b0c2db2&refer_share_uid=6447865063685&refer_share_channel=message
+挺多人在回复啊
+112358
+1
+我也试试看
+为什么抓不到
+
+第 14 页评论:
+此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！此地一游！！！
+try_spider01
+测试测试
+~~~
+测试抓取
+2019/10/07 路人甲test
+敬敬
+????
+我爱你，服尔
+回复一下
+测试
+
+第 15 页评论:
+学到头秃
+我爱王椰
+嘿嘿嘿
+测试抓取
+hhh大傻子
+测试
+杨筱筠是狗屎！
+有点难哦
+试试解析真实地址抓取
+测试网络爬虫
+
+第 16 页评论:
+test
+老师你好，我看的是您的第一版书，其中第64页上面您说(.*?)只匹配了smarter，但是63页印的结果是smarter than
+而且我自己测试代码是也是smarter than我把(.*?)改成(.*)后也是smarter than ,去官网查看了一下，好像是*？叫懒惰匹配
+因为我测试了代码的确是书上结果，但是和后面您说的不一样，是一些其他的原因吗？
+@O0o0O0o0O 我又测试了下觉得可能是正则表达式中的dogs限制了原因，懒惰匹配是尽可能少的，也就意味着可能找不到返回none也是正常的，因为dogs的存在，所以限制了必须要把前面的smarter than全部匹配，如果没有dogs的话，我测试是可以的，就只是匹配了smarter
+123
+677
+wyf的test
+4.3节用Selenium打开了网页，但是查看源代码的时候，评论那一块仍然是动态数据，有没有遇到一样问题的小伙伴交流一下啊 QQ424524128
+2019.7.31
+2019.07.29
+2019年7月25日，Hello
+2019.07.24test
+
+第 17 页评论:
+2019.7.16 Test
+2019.07.15 Test
+2019.07.15 test
+2019.7.14.test
+testing
+test
+test demo。。。。。。。。。。。。。。。。
+简直有毒，这段代码有时候可以执行，有时候又失效了
+from selenium import webdriver
+driver = webdriver.Firefox(executable_path = r'C:/Users/Administrator/Desktop/geckodriver.exe')
+driver.get('http://www.santostang.com/2018/07/04/hello-world/')
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+comment = driver.find_element_by_css_selector('div.reply-content')
+content = comment.find_element_by_tag_name('p')
+print (content.text)
+@风宇者 感觉是因为网速不够快没加载出来程序就提取了，应该让他睡几秒。
+捣鼓了半天，终于把4.3弄出来了。有一些经验分享一下：（主要是第一个的问题，搞了很久，安装卸载程序好几次）
+一个是Firefox的版本和Selenium的版本的问题。我最后安装的是Firefox的v55，然后Selenium装的是v3.5.0，因此geckodriver的版本也不是最新版（这个可以去它的官网上看，会说明适用什么版本的），这样就不会出现老师所说的还要补充自己电脑中geckodriver.exe程序的地址的步骤（我觉得这样会方便一点）。其实各个版本的对应关系还有很多，大家可以百度哈（我都是各种百度后解决的）
+二是4.3中for循环中，有一行忘记缩进了（这个很明显哈，大家看到就知道了）
+谢谢老师，开始学习
+
+第 18 页评论:
+2019.7.16 Test
+2019.07.15 Test
+2019.07.15 test
+2019.7.14.test
+testing
+test
+test demo。。。。。。。。。。。。。。。。
+简直有毒，这段代码有时候可以执行，有时候又失效了
+from selenium import webdriver
+driver = webdriver.Firefox(executable_path = r'C:/Users/Administrator/Desktop/geckodriver.exe')
+driver.get('http://www.santostang.com/2018/07/04/hello-world/')
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+comment = driver.find_element_by_css_selector('div.reply-content')
+content = comment.find_element_by_tag_name('p')
+print (content.text)
+@风宇者 感觉是因为网速不够快没加载出来程序就提取了，应该让他睡几秒。
+捣鼓了半天，终于把4.3弄出来了。有一些经验分享一下：（主要是第一个的问题，搞了很久，安装卸载程序好几次）
+一个是Firefox的版本和Selenium的版本的问题。我最后安装的是Firefox的v55，然后Selenium装的是v3.5.0，因此geckodriver的版本也不是最新版（这个可以去它的官网上看，会说明适用什么版本的），这样就不会出现老师所说的还要补充自己电脑中geckodriver.exe程序的地址的步骤（我觉得这样会方便一点）。其实各个版本的对应关系还有很多，大家可以百度哈（我都是各种百度后解决的）
+二是4.3中for循环中，有一行忘记缩进了（这个很明显哈，大家看到就知道了）
+谢谢老师，开始学习
+
+第 19 页评论:
+1
+11
+hello world
+111111
+@上帝、、也流泪！ 1111
+hello
+测试
+hello thank you
+爬取所有的评论代码
+
+
+import requests
+import json
+
+url = "https://api-zero.livere.com/v1/comments/list?callback=jQuery112406379165795651072_1552402149829&limit=10&offset={}&repSeq=4272904&requestPath=%2Fv1%2Fcomments%2Flist&consumerSeq=1020&livereSeq=28583&smartloginSeq=5154&_=1552402149837 "
+comment_list = []
+page = 1
+while True:
+rawtext = requests.get(url=url.format(page)).text
+dicts = json.loads(rawtext[rawtext.find("{"):-2])
+comments_dict = dicts.get("results").get("parents")
+if len(comments_dict):
+for comments in comments_dict:
+comment_list.append(comments.get("content"))
+page += 1
+else:
+break
+print("一共抓取到评论%d条" % len(comment_list))
+print(comment_list)
+测试~
+小毅来此测试：这是一条测试
+
+第 20 页评论:
+阿罗哈
+hi
+test 2019.02.26
+hhhh
+这个 网站为何时而能访问，时而不能访问。是网络长城的原因吗？？
+好困呀！！一闭上眼睛就能睡着
+啊
+
+test 2019-02-08
+test 2019.2.2
+
+第 21 页评论:
+2019.1.29 测试评论，谢谢博主
+import json
+import requests
+headers = {'User-Agent':'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'}
+for i in range(1,10):
+url_0 = "https://api-zero.livere.com/v1/comments/list?callback=jQuery112408735667349062561_1548686253792&limit=10&offset={}&repSeq=4272904&requestPath=%2Fv1%2Fcomments%2Flist&consumerSeq=1020&livereSeq=28583&smartloginSeq=5154&_=1548686253797".format(i)
+r = requests.get(url_0,headers = headers)
+json_string = r.text
+json_string = json_string[json_string.find('{'):-2]
+json_data = json.loads(json_string)
+comment_list = json_data['results']['parents']
+for eachone in comment_list:
+message = eachone['content']
+print (message)
+好累啊
+能加好友一起学习吗，qq二路久咦咦咦一
+2019.1.25 微腾大大的一条测试 nice
+2019.1.25
+123456
+19.01.17
+2019-1-10 来子李雷的留言测试
+还是有问题啊 网页打不开啊
+
+第 22 页评论:
+test12345
+6666
+ooo
+我来评论一下
+这是一条测试评论
+这是一条测试评论
+csass
+这是一条测试评论
+熊猫的评论 是第58条
+评论试试啊
+
+第 23 页评论:
+121212
+1212
+chrom反应慢，看得见这些评论，我就是用的chrom,还有4.3.1，没有按照唐大师说的，只要下载好解压到scripts中，就可以了，按照网上其他帖子可以打开firefox浏览器
+wordpress怎样用啊
+4.1 动态网页抓取 (解析真实地址 + selenium) 链接失效了
+刘一凡
+后边的学习不了了吗
+为什么用Chrome就看不见这些评论啊
+我发现只要点4.1 4.2 就炸
+崩了？
+
+第 24 页评论:
+为啥就是不能加载更多啊！！！都两天了！！！
+666
+余大大
+坚持
+255
+nice to meet you
+lla
+点赞！
+test
+测试终止
+
+第 25 页评论:
+测试测试1212！
+测试
+测试凭证
+11
+测试
+有这本书的学习交流群吗？
+第四章问题好多，代码各种错误，求更新
+测试
+学习一下
+读者吴先生到此一游。
+
+第 26 页评论:
+第21条测试评论
+第20条测试评论
+第19条测试评论
+第18条测试评论
+第17条测试评论
+第16条测试评论
+第15条测试评论
+第14条测试评论
+第13条测试评论
+第12条测试评论
+
+第 27 页评论:
+第11条测试评论
+第10条测试评论
+第9条测试评论
+第8条测试评论
+第7条测试评论
+第6条测试评论
+第5条测试评论
+第四条测试评论
+第三条测试评论
+第二条测试评论
+
+第 28 页评论:
+第四章代码很多敲不出来啊 求更新
+但是我把链接改成这个
+http://www.santostang.com/2018/07/04/hello-world/
+也只是打开浏览器,没有进入到页面,地址栏也没有地址啊
+@Mr.Ming 老师，第四章只打开了浏览器，没有打开网站，怎么解决？
+后面的小节也打印不出来
+书中Hello world中的链接已经失效，新的Hello world 中没有评论，怎么测试呢？
+4.3.1Selenium的安装与基本介绍
+按照您书上的方法配置好环境,用过Anaconda和IDLE运行,都是能打开FireFox浏览器,但没有页面是FireFox的"新标签页",一会儿后浏览器自动关闭,并报如下错:
+--------------------
+runfile('F:/python3/Anaconda_3.py', wdir='F:/python3')
+Traceback (most recent call last):
+
+File "", line 1, in
+runfile('F:/python3/Anaconda_3.py', wdir='F:/python3')
+
+File "D:\Program Files\Anaconda3\lib\site-packages\spyder\utils\site\sitecustomize.py", line 705, in runfile
+execfile(filename, namespace)
+
+File "D:\Program Files\Anaconda3\lib\site-packages\spyder\utils\site\sitecustomize.py", line 102, in execfile
+exec(compile(f.read(), filename, 'exec'), namespace)
+
+File "F:/python3/Anaconda_3.py", line 15, in
+driver = webdriver.Firefox(firefox_binary = binary, capabilities = caps)
+
+File "D:\Program Files\Anaconda3\lib\site-packages\selenium\webdriver\firefox\webdriver.py", line 187, in __init__
+self.binary, timeout)
+
+File "D:\Program Files\Anaconda3\lib\site-packages\selenium\webdriver\firefox\extension_connection.py", line 52, in __init__
+self.binary.launch_browser(self.profile, timeout=timeout)
+
+File "D:\Program Files\Anaconda3\lib\site-packages\selenium\webdriver\firefox\firefox_binary.py", line 73, in launch_browser
+self._wait_until_connectable(timeout=timeout)
+
+File "D:\Program Files\Anaconda3\lib\site-packages\selenium\webdriver\firefox\firefox_binary.py", line 114, in _wait_until_connectable
+% (self.profile.path))
+
+WebDriverException: Can't load the profile. Possible firefox version mismatch. You must use GeckoDriver instead for Firefox 48+. Profile Dir: C:\Users\杨俊明\AppData\Local\Temp\tmpd2ot_af7 If you specified a log_file in the FirefoxBinary constructor, check it for details.
+--------------------
+希望您能尽快解决一下
+还有就是有能出Chrome浏览器的教程(仅仅是这一节)吗
+第一个评论
+
+第 1 页评论:
+
+第 1 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 2 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 3 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 4 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 5 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 6 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 7 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 8 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 9 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 10 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 11 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 12 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 13 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 14 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 15 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 16 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 17 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 18 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 19 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 20 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 21 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 22 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 23 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 24 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 25 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 26 页评论:
+hello
+hello
+开心开心
+测试
+抛砖引玉一下：可以获取自定义起始页和终止页的评论
+#!/usr/bin/env python
+# -*- conding:utf-8 -*-
+# button.click() 之后也要等上几秒再切换frame，不然有时候会加载不出来
+# time.sleep(2)
+# browser.switch_to.parent_frame()
+
+
+from selenium import webdriver
+import time
+
+browser = webdriver.Firefox() # geckodriver.exe设置在环境路径中
+browser.implicitly_wait(20) # 隐性等待，最长等20秒
+url = ''
+browser.get(url)
+
+
+def get_to_startpage(i):
+n_next = (i - 1) // 10
+while n_next > 0:
+page = 'next'
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']"))
+button = browser.find_element_by_css_selector("button[data-page='{}']".format(page))
+button.click()
+time.sleep(2)
+browser.switch_to.parent_frame()
+n_next -= 1
+print('next')
+# browser.implicitly_wait(20)
+time.sleep(2)
+page = i
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']"))
+button = browser.find_element_by_css_selector("button[data-page='{}']".format(page))
+button.click()
+time.sleep(2)
+browser.switch_to.parent_frame()
+time.sleep(2)
+print('找到起始页啦！')
+
+
+def get_comments(i):
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']"))
+comments = browser.find_elements_by_css_selector('div.reply-content')
+for each_comment in comments:
+content = each_comment.find_element_by_tag_name('p').text
+print(content)
+if i % 10 == 0:
+page = 'next'
+else:
+page = i + 1
+button = browser.find_element_by_css_selector("button[data-page='{}']".format(page))
+button.click()
+time.sleep(2)
+browser.switch_to.parent_frame()
+time.sleep(2)
+
+
+START_PAGE = 10
+END_PAGE = 13
+
+
+get_to_startpage(START_PAGE)
+for page_n in range(START_PAGE, END_PAGE+1):
+print("第%d页评论：" % page_n)
+get_comments(page_n)
+print('-'*50)
+time.sleep(2)
+print("第%d至第%d的评论打印成功啦！" % (START_PAGE, END_PAGE))
+China No.1 test--3
+China No.1 test--2
+China No.1 test--1
+你买单，我就来~
+第一条测试
+
+第 27 页评论:
+hello
+hello
+开心开心
+测试
+抛砖引玉一下：可以获取自定义起始页和终止页的评论
+#!/usr/bin/env python
+# -*- conding:utf-8 -*-
+# button.click() 之后也要等上几秒再切换frame，不然有时候会加载不出来
+# time.sleep(2)
+# browser.switch_to.parent_frame()
+
+
+from selenium import webdriver
+import time
+
+browser = webdriver.Firefox() # geckodriver.exe设置在环境路径中
+browser.implicitly_wait(20) # 隐性等待，最长等20秒
+url = ''
+browser.get(url)
+
+
+def get_to_startpage(i):
+n_next = (i - 1) // 10
+while n_next > 0:
+page = 'next'
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']"))
+button = browser.find_element_by_css_selector("button[data-page='{}']".format(page))
+button.click()
+time.sleep(2)
+browser.switch_to.parent_frame()
+n_next -= 1
+print('next')
+# browser.implicitly_wait(20)
+time.sleep(2)
+page = i
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']"))
+button = browser.find_element_by_css_selector("button[data-page='{}']".format(page))
+button.click()
+time.sleep(2)
+browser.switch_to.parent_frame()
+time.sleep(2)
+print('找到起始页啦！')
+
+
+def get_comments(i):
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']"))
+comments = browser.find_elements_by_css_selector('div.reply-content')
+for each_comment in comments:
+content = each_comment.find_element_by_tag_name('p').text
+print(content)
+if i % 10 == 0:
+page = 'next'
+else:
+page = i + 1
+button = browser.find_element_by_css_selector("button[data-page='{}']".format(page))
+button.click()
+time.sleep(2)
+browser.switch_to.parent_frame()
+time.sleep(2)
+
+
+START_PAGE = 10
+END_PAGE = 13
+
+
+get_to_startpage(START_PAGE)
+for page_n in range(START_PAGE, END_PAGE+1):
+print("第%d页评论：" % page_n)
+get_comments(page_n)
+print('-'*50)
+time.sleep(2)
+print("第%d至第%d的评论打印成功啦！" % (START_PAGE, END_PAGE))
+China No.1 test--3
+China No.1 test--2
+China No.1 test--1
+你买单，我就来~
+第一条测试
+
+第 28 页评论:
+第三条评论
+第二条评论
+第一条评论
+新鲜出炉的代码，亲测可用！因为评论的排版问题，同时附上截图供大家参考。
+
+
+from selenium import webdriver
+import time
+
+browser=webdriver.Chrome()
+
+print("wait for link...")
+browser.get("http://www.santostang.com/2018/07/04/hello-world/")
+print("link ok!")
+print("\nwait 5s...")
+time.sleep(5)
+browser.maximize_window() #最大化窗口
+print("wait over")
+
+
+for page in range(9,14):
+print("\n页数：",end="")
+print(page)
+print("wait 30s...")
+time.sleep(30)
+print("wait over")
+
+print("\n下滑到页面底部")
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight);") # 下滑到页面底部 需要-700
+print("下滑成功")
+print("\n转换iframe")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']")) # 转换iframe
+print("转换成功")
+print("\n定位翻页按钮")
+local = 'button[data-page="' + str(page) + '"]'
+if page == 11:
+local = 'button[data-page="next"]'
+print(local)
+load_more = browser.find_element_by_css_selector(local) # 定位翻页按钮
+print("定位成功")
+print("\n点击")
+load_more.click() # 点击
+print("点击成功")
+print("wait 10s...")
+time.sleep(10) # 等待1s加载
+print("wait over")
+
+print("\n寻找评论内容")
+comments = browser.find_elements_by_css_selector('div.reply-content')
+print("寻找成功")
+print("\n输出信息")
+for each_comment in comments:
+content = each_comment.find_element_by_tag_name('p')
+print(content.text)
+print("切换到新页面")
+browser.switch_to.default_content()
+print("切换成功")
+编写了一个自动爬取十页的程序，希望各位有所指教
+import time
+from selenium import webdriver
+driver=webdriver.Chrome()
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+for page in range(0,10):
+# 下滑到页面底部
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+driver.switch_to_frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+for comment in driver.find_elements_by_css_selector("div.reply-content"):
+content=comment.find_element_by_tag_name('p')
+print(content.text)
+if(page div.more-wrapper > ("
+str2=str(page+2)
+str3=")"
+sfsfd=str1+str2+str3
+driver.find_element_by_css_selector(sfsfd).click()
+time.sleep(5)
+driver.switch_to_default_content()
+测试
+捣鼓了一整天才勉强爬取到20页评论内容，但有时候代码执行成功，有时候有执行失败。大神有空帮忙看下如何优化，感谢~
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5) # 等待加载页面
+# 进入嵌套页面，通过xpath定位到frame
+my_frame = driver.switch_to.frame(driver.find_element_by_xpath('//iframe[contains(@id,"lv-comment")]'))
+# 通过xpath定位到具体的第一条评论
+i = 1 # 定义评论初始页码
+# 循环评论页面（这里设置最多加载20页），点击页数进入下一页
+for i in range(1, 21):
+# 定位评论的具体页，//button[@data-page="2"]
+page_xpath = "//button[@data-page=" + str(i) + "]"
+if i
+
+各位帅哥，美女们，可不可以-保持一个队形啊？谢谢咯
+这是新的第一条测试
+@Posierd 好的雄蝶
+@Posierd hhh
+下面的评论真的乱，找不到啊
+北京隔离十四天之第一天
+
+第 29 页评论:
+第217条评论
+弄了一个，但代码不够简洁，有劳各位帮忙修改
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(20)
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+
+for i in range(1,20):
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+if i%10 == 0:
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+key="button[data-page="+"'"+"next"+"'"+"]"
+load_more = driver.find_element_by_css_selector(key)
+load_more.click()
+driver.switch_to.default_content()
+else:
+driver.switch_to.default_content()
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+key="button[data-page="+"'"+str(i)+"'"+"]"
+load_more = driver.find_element_by_css_selector(key)
+load_more.click()
+driver.switch_to.default_content()
+time.sleep(2)
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+comments = driver.find_elements_by_css_selector('div.reply-content')
+
+
+print("第" + str(i) + "页:")
+
+for eachcomment in comments:
+content = eachcomment.find_element_by_tag_name('p')
+print(content.text)
+driver.switch_to.default_content()
+
+
+time.sleep(5)
+driver.quit()
+以下是SQL学习时候发现文章的代码错误。
+cursor.execute('''INSERT INTO urls (url,content) VALUES('%s','%s')'''%(link,boke_title))
+1.%s旁边文本的''不能少，否则出现报错you have an error in your SQL syntax; check the manual that corresponds to your
+2.%（link,boke_title),这条语句少些了%百分号。
+from selenium import webdriver
+import time
+
+driver = webdriver.Firefox(executable_path = r'F:\geckodriver.exe')
+driver.implicitly_wait(20) # 隐性等待，最长等20秒
+#把上述地址改成你电脑中geckodriver.exe程序的地址
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+
+for i in range(1,10):
+# 下滑到页面底部
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+# 转换iframe，再找到查看更多，点击
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+load_more = driver.find_element_by_css_selector('[data-page=\'%d\']'%(i,))#标签内属性用【】包括，正则表达式赋值，变为唯一属性。
+load_more.click()
+time.sleep(2)
+comments = driver.find_elements_by_css_selector('div.reply-content')
+for eachcomment in comments:#一个页面的评论为一个list
+content = eachcomment.find_element_by_tag_name('p')
+print (content.text)
+driver.switch_to.default_content()#变回原格式，方才能页面下滑
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+终于搞了出来，/(ㄒoㄒ)/~~
+from selenium import webdriver
+import time
+
+driver = webdriver.Firefox(executable_path =r'F:\Application\geckodriver.exe')#webdriver
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")#get_url
+driver.execute_script('window.scrollTo(0,document.body.scrollHeight);')#执行该语句让浏览器加载出button的html
+print('wait for 3 seconds')
+time.sleep(3) #加载等待
+for i in range(1,11):
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title = 'livere']"))
+button = driver.find_element_by_css_selector('button[data-page=\'%d\']'%(i,))
+button.click()
+print('Click and waiting loading --- please waiting for 8 s')
+time.sleep(8) #点击后需要等待，否则评论还没加载出来，数据抓取的代码已经跑完了，结果就是没抓到数据，而代码会正常的在运行
+comment = driver.find_elements_by_css_selector('div.reply-content')
+for eachcomment in comment:
+content = eachcomment.find_element_by_tag_name('p')
+print (content.text)
+driver.switch_to.default_content() #执行页面滑动的脚本需要将driver转换到正常的模式
+driver.execute_script('window.scrollTo(0,document.body.scrollHeight);')
+
+终于成功爬取了十页的评论，真心遇到了不少的问题，靠自己摸索前进真的很慢呀
+si
+test
++1
+试下
+谢谢作者如此负责任
+
+第 30 页评论:
+第217条评论
+弄了一个，但代码不够简洁，有劳各位帮忙修改
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(20)
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+
+for i in range(1,20):
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+if i%10 == 0:
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+key="button[data-page="+"'"+"next"+"'"+"]"
+load_more = driver.find_element_by_css_selector(key)
+load_more.click()
+driver.switch_to.default_content()
+else:
+driver.switch_to.default_content()
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+key="button[data-page="+"'"+str(i)+"'"+"]"
+load_more = driver.find_element_by_css_selector(key)
+load_more.click()
+driver.switch_to.default_content()
+time.sleep(2)
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+comments = driver.find_elements_by_css_selector('div.reply-content')
+
+
+print("第" + str(i) + "页:")
+
+for eachcomment in comments:
+content = eachcomment.find_element_by_tag_name('p')
+print(content.text)
+driver.switch_to.default_content()
+
+
+time.sleep(5)
+driver.quit()
+以下是SQL学习时候发现文章的代码错误。
+cursor.execute('''INSERT INTO urls (url,content) VALUES('%s','%s')'''%(link,boke_title))
+1.%s旁边文本的''不能少，否则出现报错you have an error in your SQL syntax; check the manual that corresponds to your
+2.%（link,boke_title),这条语句少些了%百分号。
+from selenium import webdriver
+import time
+
+driver = webdriver.Firefox(executable_path = r'F:\geckodriver.exe')
+driver.implicitly_wait(20) # 隐性等待，最长等20秒
+#把上述地址改成你电脑中geckodriver.exe程序的地址
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")
+time.sleep(5)
+
+for i in range(1,10):
+# 下滑到页面底部
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+# 转换iframe，再找到查看更多，点击
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title='livere']"))
+load_more = driver.find_element_by_css_selector('[data-page=\'%d\']'%(i,))#标签内属性用【】包括，正则表达式赋值，变为唯一属性。
+load_more.click()
+time.sleep(2)
+comments = driver.find_elements_by_css_selector('div.reply-content')
+for eachcomment in comments:#一个页面的评论为一个list
+content = eachcomment.find_element_by_tag_name('p')
+print (content.text)
+driver.switch_to.default_content()#变回原格式，方才能页面下滑
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+终于搞了出来，/(ㄒoㄒ)/~~
+from selenium import webdriver
+import time
+
+driver = webdriver.Firefox(executable_path =r'F:\Application\geckodriver.exe')#webdriver
+driver.get("http://www.santostang.com/2018/07/04/hello-world/")#get_url
+driver.execute_script('window.scrollTo(0,document.body.scrollHeight);')#执行该语句让浏览器加载出button的html
+print('wait for 3 seconds')
+time.sleep(3) #加载等待
+for i in range(1,11):
+driver.switch_to.frame(driver.find_element_by_css_selector("iframe[title = 'livere']"))
+button = driver.find_element_by_css_selector('button[data-page=\'%d\']'%(i,))
+button.click()
+print('Click and waiting loading --- please waiting for 8 s')
+time.sleep(8) #点击后需要等待，否则评论还没加载出来，数据抓取的代码已经跑完了，结果就是没抓到数据，而代码会正常的在运行
+comment = driver.find_elements_by_css_selector('div.reply-content')
+for eachcomment in comment:
+content = eachcomment.find_element_by_tag_name('p')
+print (content.text)
+driver.switch_to.default_content() #执行页面滑动的脚本需要将driver转换到正常的模式
+driver.execute_script('window.scrollTo(0,document.body.scrollHeight);')
+
+终于成功爬取了十页的评论，真心遇到了不少的问题，靠自己摸索前进真的很慢呀
+si
+test
++1
+试下
+谢谢作者如此负责任
+
+第 1 页评论:
+Unable to locate element: iframe[title='livere']
+为什么我用的是源码能请求打开浏览器但是他不能定位到这个iframe？
+各路大神支支招！
+@人在囧途 因为网页更新了 试试iframe[title='livere-comment']
+@小雨过天阴 不管用啊
+"isMobile": "0",
+"isSecret": 0,
+"isModified": 0,
+"confirm": 0,
+"subCount": 0,
+
+
+1072479416 2020.11.19 到此一游
+求助~用selenium模拟登录chrome显示“chrome正受到自动测试软件的控制”，浏览器版本V86
+鹤鹤子到此一游 呵呵 ^_^
+@嫌我烦了是呗 小傻子
+hhhhhh 踩踩
+太牛了啊你们
+我刘佳全球最美
+我钟丽诗宇宙无敌
+魏灏最厉害
+佳佳小怪兽可可爱
+
+第 2 页评论:
+2020.11.10 测试一下是否有用~~~
+网页结构都变了，这上面第四章代码不太管用了，感觉这个写的还蛮不错的，也是依据这本书的案例写的，实测可以运行，大家有兴趣可以看看。https://blog.csdn.net/weixin_43616817/article/details/109022479
+前来测试
+111
+livere已经改了，后来的小白同学可以在检查页面看一下
+from selenium import webdriver
+import time
+
+#获取webdriver对象，使用火狐浏览器
+firefox = webdriver.Firefox()
+firefox.implicitly_wait(30)
+firefox.get("http://www.santostang.com/2018/07/04/hello-world/")
+print('连接成功')
+
+#封装程序
+def get_comments(n,m):
+
+if n
+
+11
+offset现在找不到了，请问老师当这种下一页找不到规律的时候该怎么继续？
+@albanwang 只有第一页的offset看不到，其它页的都有的，也就是规律没变。
+测试中,关键点:
+comment_list=json_data['results']['parents']
+原来要梯子才能加载出评论zz
+
+第 3 页评论:
+测试路过
+有没有大佬看下，用书上P58-59代码怎么只爬取了第六页的评论
+
+爬虫...爬...
+hyui
+測試,路過
+dsfgvv44
+wwrerrrwr
+测试
+测试bug
+测试
+
+第 4 页评论:
+为何执行，button.click()，时，浏览器经常没有操作：
+from selenium import webdriver
+import time
+browser = webdriver.Firefox(executable_path = r'D:\Documents\geckodriver.exe') # geckodriver.exe设置在环境路径中
+browser.implicitly_wait(20) # 隐性等待，最长等20秒
+url = 'http://www.santostang.com/2018/07/04/hello-world/'
+browser.get(url)
+time.sleep(10)
+page = 5 #选择页码
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+browser.switch_to.frame(browser.find_element_by_css_selector("iframe[title='livere']"))
+button = browser.find_element_by_css_selector("button[data-page='{}']".format(page))
+button.click()
+time.sleep(2)
+browser.switch_to.parent_frame()
+print("点击了：data-page='{}'".format(page))
+r = requests.get(link, headers= headers)
+这句可以直接r = requests.get(link）吗？
+我加 headers= headers总是报错，要去掉才行。= =不知道有没有关系
+打卡!
+现在这个页面不是JavaScript的了吧
+get 4.2
+微臣叩见唐帝，4.2解析真实地址抓取这里面的步骤2下面，说“我们可以在Network中的All找到真正的评论文件list?callback.....”，为什么是这个list？callback=jQuery.....，我们要如何知道它是真正的评论文件，请老师赐教
+打卡第四章
+获取TOP250电影数据的程序，照录一遍，执行时出了点问题。麻烦老师看一下怎麽回事。
+
+
+过来学习
+学习来了
+
+第 5 页评论:
+caps["marionette"] = False， 这个导致selenium无法运行
+为啥我这边显示的是韩文？？？？？？？？？？？？？？？
+@Walker. 有解决方法了，黏贴评论的地址时最后的"code&="要删掉，也就是要跟书上的格式一模一样才行
+@Walker. 我也是
+到此一游
+麻烦老师给看一下是怎么回事？
+@阿宝 是All吧
+这代码到底哪错了，只能爬出一页的内容
+
+
+我发现一个和有意思的事，各位大佬发在评论里的代码是没有缩进的，不过爬取到的评论内容格式正确！！！
+爬虫原来还有这种妙用！太棒了哈哈哈哈哈

@@ -18,10 +18,18 @@ for ii in range(0, 3):
         comment = driver.find_elements_by_css_selector('div.reply-content')
         print()
         print("第 %g 页评论:" % int(i + 1 + ii * 10))
+        # 打开一个文件
+        fo = open("result.txt", "a+")
+        fo.write('\n')
+        fo.write("第 %g 页评论:" % int(i + 1 + ii * 10) + '\n')
         # 打印所有评论
         for eachcomment in comment:
             content = eachcomment.find_element_by_tag_name('p')
             print(content.text)
+            # fo.write(content.text.encode("gbk", 'ignore').decode("gbk", "ignore"))
+            text = content.text.encode('GBK', 'ignore').decode('GBk')
+            fo.write(text + '\n')
+        fo.close()
 
         # 获取所有的页码按钮
         page_btn = driver.find_elements_by_class_name("page-btn")
