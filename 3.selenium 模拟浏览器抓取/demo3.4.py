@@ -7,7 +7,7 @@ driver = webdriver.Chrome(executable_path='D:\\12102\\files\\chromedriver.exe')
 driver.get("https://www.airbnb.cn/s/%E8%A5%BF%E5%AE%89/homes?refinement_paths%5B%5D=%2Fhomes")
 
 # 找出所有的出租房
-rent_list = driver.find_elements_by_css_selector('div._qlq27g')
+rent_list = driver.find_elements_by_css_selector('div._gig1e7')
 
 for each_house in rent_list:
     comment = each_house
