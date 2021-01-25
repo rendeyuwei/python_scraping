@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/5.数据存储" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/4.解析网页" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/3.selenium 模拟浏览器抓取" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2.动态网页抓取" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1.静态网页抓取" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/6.提升爬虫速度" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
